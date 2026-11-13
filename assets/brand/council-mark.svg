@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="CivicServe placeholder mark">
+  <!-- Neutral placeholder mark. NOT an official Council or Government of Uganda emblem. -->
+  <path d="M32 3 56 11v18c0 15.5-10 26.5-24 32C18 55.5 8 44.5 8 29V11L32 3Z" fill="#0d2b45"/>
+  <path d="M32 7.5 52 14.2V29c0 13-8.2 22.4-20 27.4C20.2 51.4 12 42 12 29V14.2L32 7.5Z" fill="none" stroke="#3fb68b" stroke-width="1.6" opacity=".9"/>
+  <path d="M32 17c-6 0-10.5 4.6-10.5 10.4 0 7.6 10.5 18.1 10.5 18.1s10.5-10.5 10.5-18.1C42.5 21.6 38 17 32 17Z" fill="#3fb68b"/>
+  <circle cx="32" cy="27.4" r="4.2" fill="#0d2b45"/>
+  <path d="M19 50h26" stroke="#f2c14e" stroke-width="2.2" stroke-linecap="round"/>
+</svg>

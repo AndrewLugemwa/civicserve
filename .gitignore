@@ -1,0 +1,9 @@
+# Environment-specific settings and secrets
+includes/config.local.php
+# Uploaded evidence photos (personal data)
+uploads/*
+!uploads/.htaccess
+!uploads/index.html
+# OS / editor files
+.DS_Store
+*.log

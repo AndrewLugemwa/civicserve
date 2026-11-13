@@ -1,0 +1,27 @@
+# CivicServe — Apache hardening (MAMP uses Apache by default).
+Options -Indexes
+ServerSignature Off
+
+# Block direct web access to code, tools, data and documentation folders.
+RedirectMatch 404 ^/(.*/)?(includes|tools|database|docs)(/|$)
+<FilesMatch "\.(md|sql|log|ini|sh|example\.php|lock|json)$">
+    Require all denied
+</FilesMatch>
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>
+
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set X-Frame-Options "DENY"
+</IfModule>
+
+# Cache static assets (file names carry a version query string).
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css "access plus 30 days"
+    ExpiresByType application/javascript "access plus 30 days"
+    ExpiresByType image/svg+xml "access plus 30 days"
+    ExpiresByType image/png "access plus 30 days"
+</IfModule>
