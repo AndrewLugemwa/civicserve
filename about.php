@@ -28,7 +28,7 @@ public_header('About the project', 'about');
         <div class="section-head">
             <p class="eyebrow">The team</p>
             <h2><?= e(cfg('app.vendor_name')) ?></h2>
-            <p class="muted">Every member contributed to the analysis, design and development of CivicServe.</p>
+            <p class="muted">Kampala International University · School of Mathematics and Computing · System Analysis and Design (COS2102), Year 2 Semester 1 · Lecturer: Mr. Byamugisha Peter.</p>
         </div>
         <div class="team-grid">
             <?php foreach ($team as $member): ?>
@@ -37,6 +37,7 @@ public_header('About the project', 'about');
                     <div>
                         <p class="team-name"><?= e($member['name']) ?></p>
                         <?php if (!empty($member['role'])): ?><p class="team-role"><?= e($member['role']) ?></p><?php endif; ?>
+                        <?php if (!empty($member['reg'])): ?><p class="team-reg"><?= e($member['reg']) ?><?= !empty($member['course']) ? ' · ' . e($member['course']) : '' ?></p><?php endif; ?>
                     </div>
                 </div>
             <?php endforeach; ?>

@@ -12,18 +12,21 @@ and uses no official insignia. All cases in the demonstration are sample data.
 
 ## Project team — Group 5
 
-| Member | Role |
-| --- | --- |
-| Andrew Lugemwa | Team lead & lead developer |
-| Arthur Ssemujju | Systems analyst (field study) |
-| Aber Mercy | Field research & user interviews |
-| Nalukwago Shanitah | Requirements & documentation |
-| Julius | Database design |
-| Nyamanyama | Deployment & technical support |
-| Daniel Ochen | Back-end development & security |
-| Nabakka Caroline | User interface design |
-| Najjuma Anisha | Testing & quality assurance |
-| Shamirah | Presentation & reporting |
+Kampala International University · School of Mathematics and Computing · Bachelor of Information Technology
+Course unit: **System Analysis and Design (COS2102)**, Year 2 Semester 1 · Lecturer: **Mr. Byamugisha Peter**
+
+| No. | Reg. number | Member name | Course | Role |
+| --- | --- | --- | --- | --- |
+| 1 | 2025-08-43544 | Lugemwa Andrew | BIT | Team lead & lead developer |
+| 2 | 2025-08-39931 | Najjuma Anisha | BIT | Testing & quality assurance |
+| 3 | 2025-08-40657 | Ochen Daniel | BIT | Back-end development & security |
+| 4 | 2025-08-42879 | Ssemujju Arthur Silver | BIT | Systems analyst (field study) |
+| 5 | 2025-08-41733 | Nabakka Caroline | BIT | User interface design |
+| 6 | 2025-08-42859 | Nalukwago Shanitah | BIT | Requirements & documentation |
+| 7 | 2025-08-44034 | Obanya Julius | BCS | Database design |
+| 8 | 2025-08-43000 | Aber Mercy Unia | BIT | Field research & user interviews |
+| 9 | 2025-08-42503 | Muroreukwere Shamirah | BIT | Presentation & reporting |
+| 10 | 2025-08-40571 | Nyamanyama Essenine | BIT | Deployment & technical support |
 
 The team is also listed in the system on the **About the project** page (`about.php`).
 
@@ -64,7 +67,7 @@ locking on case updates · full audit history.
 PHP 8, MySQL, HTML, CSS, JavaScript; Leaflet 1.9.4 maps (bundled, BSD-2-Clause) with OpenStreetMap tiles. Runs
 locally on MAMP (macOS).
 
-## Setup (new installation)
+## Setup on macOS (MAMP)
 
 1. Copy this folder into `/Applications/MAMP/htdocs/` and start MAMP.
 2. In phpMyAdmin create a database named `civicserve_kansanga`, then import `database/schema.sql`.
@@ -76,6 +79,28 @@ locally on MAMP (macOS).
    /Applications/MAMP/bin/php/php8.3.30/bin/php tools/seed_demo.php --reset     # sample cases for the demonstration
    ```
 5. Open `http://localhost:8888/civicserve-case-study/`. Staff sign-in: `login.php`.
+
+## Setup on Windows (XAMPP)
+
+1. Install **XAMPP for Windows** (PHP 8.1+) from https://www.apachefriends.org to `C:\xampp`.
+2. In the XAMPP Control Panel, **Start** Apache and MySQL.
+3. Copy this folder to `C:\xampp\htdocs\civicserve-case-study`.
+4. Open `http://localhost/phpmyadmin`, create a database named `civicserve_kansanga`, and **Import** `database\schema.sql`.
+5. XAMPP's MySQL `root` user has no password. Create `includes\config.local.php` containing:
+   ```php
+   <?php
+   return ['db' => ['user' => 'root', 'password' => '']];
+   ```
+6. In Command Prompt:
+   ```
+   cd C:\xampp\htdocs\civicserve-case-study
+   C:\xampp\php\php.exe tools\create_staff.php --name="Your Name" --email=you@example.com --role=admin
+   C:\xampp\php\php.exe tools\seed_demo.php --reset
+   ```
+7. Open `http://localhost/civicserve-case-study/`. Staff sign-in: `login.php`.
+
+If photo uploads fail, enable `extension=fileinfo` and `extension=gd` in `C:\xampp\php\php.ini` (remove the `;`) and restart Apache.
+
 
 All study-specific settings (divisions, departments, categories, target days, map area) are in
 `includes/config.php`. Setting `'case_study' => ''` there turns this into the general edition for any council.

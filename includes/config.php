@@ -78,16 +78,16 @@ $config = [
     'map' => ['lat' => 0.2872, 'lng' => 32.6078, 'zoom' => 14],   // Kansanga
     // Project team (shown on about.php). Group work by Group 5.
     'team' => [
-        ['name' => 'Andrew Lugemwa',     'role' => 'Team lead & lead developer'],
-        ['name' => 'Arthur Ssemujju',    'role' => 'Systems analyst (field study)'],
-        ['name' => 'Aber Mercy',         'role' => 'Field research & user interviews'],
-        ['name' => 'Nalukwago Shanitah', 'role' => 'Requirements & documentation'],
-        ['name' => 'Julius',             'role' => 'Database design'],
-        ['name' => 'Nyamanyama',         'role' => 'Deployment & technical support'],
-        ['name' => 'Daniel Ochen',       'role' => 'Back-end development & security'],
-        ['name' => 'Nabakka Caroline',   'role' => 'User interface design'],
-        ['name' => 'Najjuma Anisha',     'role' => 'Testing & quality assurance'],
-        ['name' => 'Shamirah',           'role' => 'Presentation & reporting'],
+        ['name' => 'Lugemwa Andrew',        'reg' => '2025-08-43544', 'course' => 'BIT', 'role' => 'Team lead & lead developer'],
+        ['name' => 'Najjuma Anisha',        'reg' => '2025-08-39931', 'course' => 'BIT', 'role' => 'Testing & quality assurance'],
+        ['name' => 'Ochen Daniel',          'reg' => '2025-08-40657', 'course' => 'BIT', 'role' => 'Back-end development & security'],
+        ['name' => 'Ssemujju Arthur Silver','reg' => '2025-08-42879', 'course' => 'BIT', 'role' => 'Systems analyst (field study)'],
+        ['name' => 'Nabakka Caroline',      'reg' => '2025-08-41733', 'course' => 'BIT', 'role' => 'User interface design'],
+        ['name' => 'Nalukwago Shanitah',    'reg' => '2025-08-42859', 'course' => 'BIT', 'role' => 'Requirements & documentation'],
+        ['name' => 'Obanya Julius',         'reg' => '2025-08-44034', 'course' => 'BCS', 'role' => 'Database design'],
+        ['name' => 'Aber Mercy Unia',       'reg' => '2025-08-43000', 'course' => 'BIT', 'role' => 'Field research & user interviews'],
+        ['name' => 'Muroreukwere Shamirah', 'reg' => '2025-08-42503', 'course' => 'BIT', 'role' => 'Presentation & reporting'],
+        ['name' => 'Nyamanyama Essenine',   'reg' => '2025-08-40571', 'course' => 'BIT', 'role' => 'Deployment & technical support'],
     ],
 
     'divisions' => [

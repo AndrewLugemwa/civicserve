@@ -27,7 +27,8 @@ if ($name === '' || !filter_var($email, FILTER_VALIDATE_EMAIL) || !array_key_exi
 function read_secret(string $prompt): string
 {
     fwrite(STDOUT, $prompt);
-    $tty = stream_isatty(STDIN);
+    // Hide typing on macOS/Linux terminals; Windows consoles have no stty.
+    $tty = stream_isatty(STDIN) && PHP_OS_FAMILY !== 'Windows';
     if ($tty) shell_exec('stty -echo');
     $value = rtrim((string)fgets(STDIN), "\r\n");
     if ($tty) { shell_exec('stty echo'); fwrite(STDOUT, PHP_EOL); }

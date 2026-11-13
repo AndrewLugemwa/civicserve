@@ -7,7 +7,7 @@
 | Date of fieldwork | 14 October 2026 |
 | Location | Kansanga Ssebagala Village, Kansanga, Makindye Division, Kampala |
 | Meeting point | Office of the LC1 Chairperson, Kansanga Ssebagala Village |
-| Study team | Group 5: Andrew Lugemwa (team lead), Arthur Ssemujju, Aber Mercy, Nalukwago Shanitah, Julius, Nyamanyama, Daniel Ochen, Nabakka Caroline, Najjuma Anisha, Shamirah |
+| Study team | Group 5: Lugemwa Andrew (team lead), Najjuma Anisha, Ochen Daniel, Ssemujju Arthur Silver, Nabakka Caroline, Nalukwago Shanitah, Obanya Julius, Aber Mercy Unia, Muroreukwere Shamirah, Nyamanyama Essenine |
 | Original topic | Community noise and nuisance: a proposed *Community Noise Mapper* |
 | Evidence kept | Group photograph at the LC1 office (Figure 1), audio recordings of resident interviews, video clips |
 
