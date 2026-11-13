@@ -69,7 +69,7 @@ public_header('Track a report', 'track');
 
                 <dl class="detail-list">
                     <dt>Issue</dt><dd><?= e(category_label($report['category'])) ?></dd>
-                    <dt>Division</dt><dd><?= e(division_label($report['division'])) ?></dd>
+                    <dt><?= e(area_label()) ?></dt><dd><?= e(division_label($report['division'])) ?></dd>
                     <dt>Department</dt><dd><?= e(department_label($report['assigned_department'])) ?></dd>
                     <dt>Submitted</dt><dd><?= e(fmt_date($report['created_at'], true)) ?></dd>
                     <?php if ($report['status'] === 'Resolved'): ?>

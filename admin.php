@@ -57,7 +57,7 @@ staff_header('Overview', 'overview');
 <div class="page-head">
     <div>
         <h1>Overview</h1>
-        <p><?= e(date('l j F Y')) ?> · Council-wide figures across all divisions</p>
+        <p><?= e(date('l j F Y')) ?> · Figures across all <?= e(strtolower(area_label(true))) ?></p>
     </div>
     <div class="button-row">
         <a class="button button-secondary" href="intake.php">Log a complaint</a>
@@ -122,8 +122,8 @@ staff_header('Overview', 'overview');
     </section>
 
     <section class="panel span-6" aria-labelledby="div-h">
-        <h2 id="div-h">Open cases by division</h2>
-        <p class="panel-sub">Across all divisions</p>
+        <h2 id="div-h">Open cases by <?= e(strtolower(area_label())) ?></h2>
+        <p class="panel-sub">Across all <?= e(strtolower(area_label(true))) ?></p>
         <ul class="hbar-list">
             <?php foreach ($divRows as $r): ?>
                 <li class="hbar-row">
@@ -146,13 +146,13 @@ staff_header('Overview', 'overview');
         <?php else: ?>
         <div class="table-wrap">
             <table class="data-table responsive">
-                <thead><tr><th>Reference</th><th>Issue</th><th>Division</th><th>Department</th><th>Priority</th><th>Target date</th></tr></thead>
+                <thead><tr><th>Reference</th><th>Issue</th><th><?= e(area_label()) ?></th><th>Department</th><th>Priority</th><th>Target date</th></tr></thead>
                 <tbody>
                 <?php foreach ($attention as $c): ?>
                     <tr class="<?= is_overdue($c) ? 'row-overdue' : '' ?>">
                         <td data-label="Reference"><a class="ref" href="case.php?id=<?= (int)$c['id'] ?>"><?= e($c['reference_number']) ?></a></td>
                         <td data-label="Issue"><?= e(category_label($c['category'])) ?></td>
-                        <td data-label="Division"><?= e(division_label($c['division'])) ?></td>
+                        <td data-label="<?= e(area_label()) ?>"><?= e(division_label($c['division'])) ?></td>
                         <td data-label="Department"><?= e(department_label($c['assigned_department'])) ?></td>
                         <td data-label="Priority"><?= priority_badge($c['priority']) ?></td>
                         <td data-label="Target date"><?= e(fmt_date($c['due_date'])) ?> <span class="<?= is_overdue($c) ? 'overdue-flag' : 'due-soon' ?>"><?= e(fmt_relative_days($c['due_date'])) ?></span></td>

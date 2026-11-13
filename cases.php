@@ -64,9 +64,9 @@ staff_header('Case queue', 'cases');
         </select>
     </div>
     <div class="field">
-        <label for="division">Division</label>
+        <label for="division"><?= e(area_label()) ?></label>
         <select id="division" name="division">
-            <option value="">Any division</option>
+            <option value="">Any <?= e(strtolower(area_label())) ?></option>
             <?php foreach (cfg('divisions') as $k => $label): ?><option value="<?= e($k) ?>"<?= $f['division'] === $k ? ' selected' : '' ?>><?= e($label) ?></option><?php endforeach; ?>
         </select>
     </div>

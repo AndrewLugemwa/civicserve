@@ -67,9 +67,9 @@ $describedBy = fn(string $k, string $hint = '') => ' aria-describedby="' . trim(
         <legend><span class="legend-num">2</span>Where is it?</legend>
         <div class="form-grid">
             <div class="<?= $fieldClass('division') ?>">
-                <label for="f-division">Division</label>
+                <label for="f-division"><?= e(area_label()) ?></label>
                 <select id="f-division" name="division" required<?= $describedBy('division') ?>>
-                    <option value="">Choose a division</option>
+                    <option value="">Choose <?= e(preg_match('/^[aeiou]/i', area_label()) ? 'an' : 'a') ?> <?= e(strtolower(area_label())) ?></option>
                     <?php foreach (cfg('divisions') as $key => $label): ?>
                         <option value="<?= e($key) ?>"<?= ($in['division'] ?? '') === $key ? ' selected' : '' ?>><?= e($label) ?></option>
                     <?php endforeach; ?>

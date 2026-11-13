@@ -1,9 +1,14 @@
-# CivicServe 3.0 — Case study edition: Makindye Ssabagabo Municipality
+# CivicServe 3.0 — Case study: Kansanga, Makindye Division (Kampala)
 
-**Academic project.** CivicServe was designed from a field study of how community complaints are reported and
-handled in Makindye Ssabagabo Municipality, Wakiso District. It is a student systems-analysis and development
-project and **group work by Group 5**. It is **not** an official service of Makindye
-Ssabagabo Municipal Council and does not use the Council's insignia. All cases in the demonstration are sample data.
+**Academic project — group work by Group 5.** CivicServe is a community complaint reporting and tracking
+system. It grew out of fieldwork carried out on **14 October 2026 in Kansanga Ssebagala Village, Kansanga
+(Makindye Division, Kampala)**, where the group studied community noise for a proposed *Community Noise
+Mapper*. The findings showed that residents need a way to report any community problem, with its place
+and time, and to follow it up themselves. With the lecturer's approval, the project was widened into a
+general complaint reporting and tracking system, with noise and nuisance kept as a core category.
+
+CivicServe is **not** an official service of Kampala Capital City Authority (KCCA) or any government body,
+and uses no official insignia. All cases in the demonstration are sample data.
 
 ## Project team — Group 5
 
@@ -22,16 +27,20 @@ Ssabagabo Municipal Council and does not use the Council's insignia. All cases i
 
 The team is also listed in the system on the **About the project** page (`about.php`).
 
-## The study setting reflected in the system
+## The case study in the system
 
-| Study setting | In CivicServe |
+| From the field study | In CivicServe |
 | --- | --- |
-| Three divisions: Bunamwaya, Masajja, Ndejje | Every report records its division; dashboard shows open cases per division |
-| Departments that handle complaints (Works & Technical Services, Health & Environment, Physical Planning, Community-Based Services, Administration) | Each issue category is routed to its department automatically |
-| Issue types: roads, drainage and flooding, garbage, street lights, noise and nuisance, building control, markets and facilities | Report categories, each with a target number of days |
-| Complaints made in person and by phone, not only online | Staff "Log a complaint" page for walk-in and phone reports |
+| Noise from bars is tied to specific places | Every report records an area (Kansanga, Kabalagala, Muyenga, Ggaba, Bukasa), a location and an optional map pin |
+| Noise depends on the time of day | Every report and update is dated and timed |
+| Affected residents are hard to reach during the day | Residents report at any time and track progress with a reference number |
+| Scope widened to all community complaints (approved by the lecturer) | Categories for noise (listed first), roads, drainage, garbage, street lights, building control, markets and facilities |
 
-Confirm these rows against your field notes. `docs/FIELD-STUDY.md` records the study methods, findings and how each finding became a requirement.
+Departments are modelled on KCCA's directorates (Engineering & Technical Services; Public Health Services
+& Environment; Physical Planning; Gender, Community Services & Production; Administration & Human
+Resource Management).
+
+Full details, evidence and limitations: `docs/FIELD-STUDY.md`.
 
 ## Features
 
@@ -58,9 +67,9 @@ locally on MAMP (macOS).
 ## Setup (new installation)
 
 1. Copy this folder into `/Applications/MAMP/htdocs/` and start MAMP.
-2. In phpMyAdmin create a database (e.g. `civic_eservice`), then import `database/schema.sql`.
-3. If your database name or MySQL password differ from MAMP's defaults (`civic_eservice`, `root`/`root`), copy
-   `includes/config.local.example.php` to `includes/config.local.php` and edit it. Keep `'env' => 'demo'`.
+2. In phpMyAdmin create a database named `civicserve_kansanga`, then import `database/schema.sql`.
+3. MAMP's defaults (MySQL user `root`, password `root`) work as they are. If yours differ, copy
+   `includes/config.local.example.php` to `includes/config.local.php` and edit it.
 4. In Terminal, from this folder:
    ```
    /Applications/MAMP/bin/php/php8.3.30/bin/php tools/create_staff.php --name="Your Name" --email=you@example.com --role=admin

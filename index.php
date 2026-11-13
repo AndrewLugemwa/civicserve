@@ -79,7 +79,7 @@ public_header('Report a community issue', 'report');
         </div>
         <div class="feature">
             <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-12a7 7 0 10-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
-            <h3>Local</h3><p>Reports are routed to teams serving Bunamwaya, Masajja and Ndejje divisions.</p>
+            <h3>Local</h3><p>Each report records where it is and goes to the department responsible.</p>
         </div>
     </div>
 </section>

@@ -26,7 +26,7 @@ function pilot_banner(): string
         return '';
     }
     $text = cfg('app.case_study')
-        ? 'Based on a field study in ' . cfg('app.case_study') . '. Not an official Council service; cases shown are sample data.'
+        ? 'Based on a field study in ' . cfg('app.case_study') . '. Not an official government service; cases shown are sample data.'
         : 'Cases shown are sample data for demonstration.';
     return '<div class="pilot-banner" role="note"><div class="container"><strong>' . e(cfg('app.pilot_label')) . '.</strong> '
         . e($text) . '</div></div>';

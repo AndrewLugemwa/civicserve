@@ -10,7 +10,7 @@ return [
     ],
     'db' => [
         'host'     => 'localhost',
-        'name'     => 'civic_eservice',
+        'name'     => 'civicserve_kansanga',
         'user'     => 'civicserve_app',          // a dedicated user with only SELECT/INSERT/UPDATE/DELETE
         'password' => 'CHANGE-ME-long-random-password',
     ],

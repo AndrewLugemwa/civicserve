@@ -49,7 +49,7 @@ public_header('About the project', 'about');
         <div class="feature">
             <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-12a7 7 0 10-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
             <h3>The case study</h3>
-            <p><?php if (cfg('app.case_study')): ?>We studied how community complaints are reported and handled in <?= e(cfg('app.case_study')) ?><?= cfg('council.district') ? ', ' . e(cfg('council.district')) : '' ?>, across its <?= count(array_diff(array_keys(cfg('divisions')), ['unsure'])) ?> divisions.<?php else: ?>CivicServe can be configured for any municipality.<?php endif; ?></p>
+            <p><?php if (cfg('app.case_study')): ?>We studied how community complaints are reported and handled in <?= e(cfg('app.case_study')) ?><?= cfg('council.district') ? ', ' . e(cfg('council.district')) : '' ?>, covering <?= e(implode(', ', array_values(array_diff_key(cfg('divisions'), ['unsure' => 1])))) ?>.<?php else: ?>CivicServe can be configured for any municipality.<?php endif; ?></p>
         </div>
         <div class="feature">
             <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4z"/></svg></div>
@@ -69,7 +69,7 @@ public_header('About the project', 'about');
         <div class="info-card info-card-warning">
             <h3>Academic project</h3>
             <p style="margin:0">CivicServe is a student project by <?= e(cfg('app.vendor_name')) ?><?= cfg('app.case_study') ? ', based on a field study in ' . e(cfg('app.case_study')) : '' ?>.
-                It is not an official council service, and all cases shown are sample data.</p>
+                It is not an official government service, and all cases shown are sample data.</p>
         </div>
     </div>
 </section>

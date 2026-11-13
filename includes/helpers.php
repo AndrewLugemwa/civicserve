@@ -67,6 +67,12 @@ function department_label(?string $key): string
     return cfg('departments.' . $key) ?? $key;
 }
 
+/** What the municipality's sub-areas are called (Division, Parish, Area...), from config. */
+function area_label(bool $plural = false): string
+{
+    return (string)cfg($plural ? 'area_label_plural' : 'area_label', $plural ? 'Divisions' : 'Division');
+}
+
 function division_label(?string $key): string
 {
     if ($key === null || $key === '') {

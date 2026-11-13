@@ -66,7 +66,7 @@ echo pilot_banner();
             <p class="eyebrow" style="color:#8fe0bd">Staff workspace</p>
             <h1>Every community report, owned and on time.</h1>
             <ul class="auth-points">
-                <li>One queue for every division and department.</li>
+                <li>One queue for every <?= e(strtolower(area_label())) ?> and department.</li>
                 <li>Target dates and overdue cases in plain view.</li>
                 <li>A complete, timed history of every action.</li>
             </ul>

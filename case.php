@@ -48,7 +48,7 @@ staff_header($case['reference_number'], 'cases');
             <h2>The issue</h2>
             <dl class="detail-list" style="margin:12px 0 16px">
                 <dt>Category</dt><dd><?= e(category_label($case['category'])) ?></dd>
-                <dt>Division</dt><dd><?= e(division_label($case['division'])) ?></dd>
+                <dt><?= e(area_label()) ?></dt><dd><?= e(division_label($case['division'])) ?></dd>
                 <dt>Location</dt><dd><?= e($case['location']) ?></dd>
                 <dt>Map position</dt>
                 <dd><?php if ($hasCoords): ?>

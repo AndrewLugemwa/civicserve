@@ -123,7 +123,7 @@
     var errors = {};
     if (!form.querySelector('input[name=category]:checked')) errors.category = 'Choose the category that best describes the issue.';
     if (form.description.value.trim().length < 15) errors.description = 'Describe the problem in at least 15 characters.';
-    if (!form.division.value) errors.division = 'Choose the division where the issue is.';
+    if (!form.division.value) errors.division = 'Choose the area where the issue is.';
     if (form.location.value.trim().length < 3) errors.location = 'Enter a street, village or landmark so staff can find the issue.';
     if (form.citizen_name.value.trim().length < 2) errors.name = 'Enter the full name of the person reporting.';
     if (!phoneRe.test(form.phone.value.replace(/[\s\-().]/g, ''))) errors.phone = 'Enter a valid Ugandan phone number, e.g. 0772 123 456.';

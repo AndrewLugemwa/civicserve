@@ -22,7 +22,7 @@ header('Content-Disposition: attachment; filename="civicserve-cases-' . date('Y-
 header('Cache-Control: private, no-store');
 $out = fopen('php://output', 'w');
 fwrite($out, "\xEF\xBB\xBF"); // UTF-8 BOM so Excel shows names correctly
-fputcsv($out, ['Reference', 'Received', 'Channel', 'Issue', 'Division', 'Location', 'Latitude', 'Longitude', 'Priority', 'Status',
+fputcsv($out, ['Reference', 'Received', 'Channel', 'Issue', area_label(), 'Location', 'Latitude', 'Longitude', 'Priority', 'Status',
                'Department', 'Target date', 'Closed', 'Overdue', 'Complainant', 'Phone', 'Email']);
 while ($r = $stmt->fetch()) {
     $row = array_map($cell, [

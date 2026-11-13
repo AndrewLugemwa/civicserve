@@ -23,17 +23,17 @@ $config = [
         'tagline'      => 'Civic Issue Reporting & Tracking Portal',
         // Academic case study: set the study area to label the whole system as a field-study project.
         // Leave empty for the general edition.
-        'case_study'   => 'Makindye Ssabagabo Municipality',
+        'case_study'   => 'Kansanga, Makindye Division (Kampala)',
         // The project team credited in footers and on the About page (about.php).
         'vendor_name'  => 'Group 5',
         'vendor_url'   => 'about.php',
     ],
 
     'council' => [
-        'name'         => 'Makindye Ssabagabo Municipal Council', // the council in the field study
-        'short_name'   => 'Makindye Ssabagabo',
+        'name'         => 'Makindye Division, Kampala',   // area of the field study
+        'short_name'   => 'Makindye Division',
         'abbreviation' => 'CS',                     // reference prefix, e.g. CS-26-7KQ4XZ
-        'district'     => 'Wakiso District',
+        'district'     => '',
         'tagline'      => 'Report it. Track it. See it resolved.',
         // Logo shown in the header. To use a council's approved logo, drop the file into assets/brand/
         // and change this path. Never add national insignia without written authorisation.
@@ -47,13 +47,13 @@ $config = [
     'db' => [
         'host'     => getenv('CIVICSERVE_DB_HOST') ?: 'localhost',
         'port'     => getenv('CIVICSERVE_DB_PORT') ?: '',
-        'name'     => getenv('CIVICSERVE_DB_NAME') ?: 'civic_eservice',
+        'name'     => getenv('CIVICSERVE_DB_NAME') ?: 'civicserve_kansanga',
         'user'     => getenv('CIVICSERVE_DB_USER') ?: 'root',
         'password' => getenv('CIVICSERVE_DB_PASSWORD') !== false ? getenv('CIVICSERVE_DB_PASSWORD') : 'root', // MAMP default, local only
     ],
 
     'security' => [
-        'session_name'          => 'CIVICSERVE_CASESTUDY',
+        'session_name'          => 'CIVICSERVE_KANSANGA',
         'session_idle_minutes'  => 30,
         'session_max_hours'     => 10,
         'login_max_failures'    => 5,    // per email + IP, within the window below
@@ -71,9 +71,11 @@ $config = [
         'max_px'    => 2400,             // images are re-encoded and resized; this strips GPS/EXIF metadata
     ],
 
-    // Administrative divisions of the municipality.
+    // Areas covered (neighbourhoods of Makindye Division around Kansanga) and what they are called.
+    'area_label'        => 'Area',
+    'area_label_plural' => 'Areas',
     // Where the report map opens (default: central Kampala). Change for another area.
-    'map' => ['lat' => 0.2600, 'lng' => 32.5750, 'zoom' => 13],   // Makindye Ssabagabo
+    'map' => ['lat' => 0.2872, 'lng' => 32.6078, 'zoom' => 14],   // Kansanga
     // Project team (shown on about.php). Group work by Group 5.
     'team' => [
         ['name' => 'Andrew Lugemwa',     'role' => 'Team lead & lead developer'],
@@ -89,24 +91,30 @@ $config = [
     ],
 
     'divisions' => [
-        'bunamwaya' => 'Bunamwaya Division',
-        'masajja'   => 'Masajja Division',
-        'ndejje'    => 'Ndejje Division',
+        'kansanga'   => 'Kansanga',
+        'kabalagala' => 'Kabalagala',
+        'muyenga'    => 'Muyenga',
+        'ggaba'      => 'Ggaba',
+        'bukasa'     => 'Bukasa',
         'unsure'    => 'Not sure',
     ],
 
     // Departments that own cases.
     'departments' => [
-        'works'     => 'Works & Technical Services',
-        'health'    => 'Health & Environment',
+        'works'     => 'Engineering & Technical Services',
+        'health'    => 'Public Health Services & Environment',
         'planning'  => 'Physical Planning',
-        'community' => 'Community-Based Services',
-        'admin'     => "Administration (Town Clerk's Office)",
+        'community' => 'Gender, Community Services & Production',
+        'admin'     => 'Administration & Human Resource Management',
     ],
 
     // Report categories. 'department' routes new cases; 'sla_days' sets the target date;
     // 'priority' is the starting priority (staff can change it).
     'categories' => [
+        'noise' => [
+            'label' => 'Noise & nuisance', 'department' => 'health', 'priority' => 'Normal', 'sla_days' => 7,
+            'hint'  => 'Persistent loud music, machinery, events or other public nuisance.',
+        ],
         'roads' => [
             'label' => 'Potholes & road damage', 'department' => 'works', 'priority' => 'Normal', 'sla_days' => 14,
             'hint'  => 'Potholes, broken culverts, damaged road edges or walkways.',
@@ -122,10 +130,6 @@ $config = [
         'streetlights' => [
             'label' => 'Streetlighting', 'department' => 'works', 'priority' => 'Normal', 'sla_days' => 10,
             'hint'  => 'Street lights that are off, flickering or damaged.',
-        ],
-        'noise' => [
-            'label' => 'Noise & nuisance', 'department' => 'health', 'priority' => 'Normal', 'sla_days' => 7,
-            'hint'  => 'Persistent loud music, machinery, events or other public nuisance.',
         ],
         'building' => [
             'label' => 'Building control & land use', 'department' => 'planning', 'priority' => 'Normal', 'sla_days' => 14,

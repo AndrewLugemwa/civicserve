@@ -39,7 +39,7 @@ if ($descLen < 15) {
     $errors['description'] = 'Keep the description under 2,000 characters.';
 }
 if (!array_key_exists($input['division'], cfg('divisions'))) {
-    $errors['division'] = 'Choose the division where the issue is.';
+    $errors['division'] = 'Choose the ' . strtolower(area_label()) . ' where the issue is.';
 }
 $locLen = mb_strlen($input['location']);
 if ($locLen < 3 || $locLen > 255) {
